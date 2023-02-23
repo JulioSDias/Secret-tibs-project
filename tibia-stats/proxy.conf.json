@@ -1,0 +1,6 @@
+{
+    "/api": {
+      "target": "https://tibiawiki.dev",
+      "secure": false
+    }
+  }

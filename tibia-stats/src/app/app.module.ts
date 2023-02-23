@@ -6,6 +6,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-rounting.module';
 import { HomeComponent } from './Home/home.component';
+import { MathService } from './Shared/Services/math.service';
+import { WikiService } from './Shared/Services/wiki.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -15,9 +18,13 @@ import { HomeComponent } from './Home/home.component';
   imports: [
     BrowserModule,
     NgbModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    MathService,
+    WikiService
+  ],
 
   bootstrap: [
     AppComponent

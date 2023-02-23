@@ -1,3 +1,67 @@
-<div>
-    <a>Distance training here</a>
+<div class="card">
+    <h4 class="card-header text-center">Distance Training</h4>
+    <div class="card-body">
+        <form [formGroup]="form" (ngSubmit)="OnSubmit()">
+            <h5 class="text-center">Vocation</h5>
+            <div class="mb-3 mt-3 d-flex justify-content-center align-items-center">
+                <div class="form-check form-check-inline ">
+                    <input class="form-check-input" type="radio" name="vocation" id="paladin" style="transform:scale(1.2);" formControlName="vocation" value="paladin" checked>
+                    <label class="form-check-label" for="paladin">Paladin</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="vocation" id="knight" style="transform:scale(1.2);" formControlName="vocation" value="knight">
+                    <label class="form-check-label" for="knight">Knight</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="vocation" id="sorcerer" style="transform:scale(1.2);" formControlName="vocation" value="sorcerer">
+                    <label class="form-check-label" for="sorcerer">Sorcerer</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="vocation" id="druid" style="transform:scale(1.2);" formControlName="vocation" value="druid">
+                    <label class="form-check-label" for="druid">Druid</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="vocation" id="rookgaardian" style="transform:scale(1.2);" formControlName="vocation" value="rookgaardian">
+                    <label class="form-check-label" for="rookgaardian">Rookgaardian</label>
+                </div>
+            </div>
+            <h5 class="text-center">Insert values</h5>
+            <div class="form-row d-flex">
+                <div class="form-group mb-auto p-2 col-md-3">
+                    <label class="form-label">Starter skill</label>
+                    <input type="number" min="0" max="500" class="form-control" formControlName="skill">
+                </div>
+                <div class="form-group mx-auto p-2 col-md-3">
+                    <label class="form-label">% to go</label>
+                    <input type="number" step=".01" min="0" max="100" class="form-control" formControlName="toGo">
+                </div>
+                <div class="form-group ms-auto p-2 col-md-3">
+                    <label class="form-label">Desired Skill</label>
+                    <input type="number" min="0" max="500" class="form-control" formControlName="desiredSkill">
+                </div>
+            </div>
+            <div class="form-row d-flex">
+                <div class="form-group mb-auto p-2 col-md-3">
+                    <label class="form-label">Weapon</label>
+                    <select class="form-select">
+                        <option *ngFor="let weapon of weapons">{{weapon}}</option>
+                    </select>    
+                </div>
+                <div class="form-group mx-auto p-2 col-md-3">
+                    <label class="form-label">Ammo</label>
+                    <select class="form-select input-sm">
+                        <option *ngFor="let ammo of ammos">{{ammo}}</option>
+                    </select>    
+                </div>
+                <div class="form-group ms-auto p-2 col-md-3">
+                    <label class="form-label">Ammo Cost</label>
+                    <input type="number" step=".1" min="0" max="999" class="form-control" formControlName="ammoCost">
+                </div>
+            </div>        
+            <div>
+                <button class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+        <button class="btn btn-primary" (click)="Test()">Teste</button>
+    </div>
 </div>
